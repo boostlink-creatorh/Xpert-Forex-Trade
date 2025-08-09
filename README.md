@@ -25,6 +25,15 @@ A simple PHP MVC starter for a forex trading platform supporting spot and future
 3. Point your web server to `public/index.php`
 4. Start building!
 
+## Default Login
+
+After setting up your database, you can log in with the following credentials:
+
+- **Username:** admin
+- **Password:** Kapacity$55
+
+You can add more users directly to the `users` table in your database.
+
 ## Security
 - Do NOT commit your real `.env` file.
 - Add `.env` to `.gitignore`.
