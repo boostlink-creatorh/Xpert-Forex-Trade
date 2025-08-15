@@ -1,0 +1,31 @@
+name: 🔥 Firebase Hosting Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  firebase-deploy:
+    name: 🚀 Deploy to Firebase Hosting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📦 Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🔐 Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          workload_identity_provider: "projects/491439791457/locations/global/workloadIdentityPools/github-pool/providers/github-provider"
+          service_account: "firebase-deploy-bot@xpert-forex-trade.iam.gserviceaccount.com"
+
+      - name: 🛠️ Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: 🚀 Deploy to Firebase Hosting
+        run: firebase deploy --only hosting --project xpert-forex-trade
