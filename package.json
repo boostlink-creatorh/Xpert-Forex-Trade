@@ -1,9 +1,5 @@
-{
-  "name": "demo-repo",
-  "version": "0.2.0",
-  "description": "A sample package.json",
-  "dependencies": {
-    "@primer/css": "17.0.1"
-  },
-  "license": "MIT"
+"scripts": {
+  "firebase-login": "firebase login",
+  "firebase-init": "firebase init hosting",
+  "firebase-deploy": "firebase deploy --only hosting"
 }
