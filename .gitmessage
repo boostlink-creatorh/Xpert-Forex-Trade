@@ -1,0 +1,29 @@
+<type>(<scope>): <summary>
+
+# Commit Types:
+# feat     - new feature or logic
+# fix      - bug fix or correction
+# chore    - non-functional change (e.g. formatting, cleanup)
+# docs     - documentation only
+# refactor - code restructure without behavior change
+# perf     - performance improvement
+# test     - adding or updating tests
+
+# Scopes:
+# sql         - query monitoring, filter validation, schema changes
+# auth        - role hygiene, user indexing
+# storage     - object ID generation
+# connection  - connection strategy and pooler setup
+# onboarding  - folder structure, README, contributor guidance
+
+# Examples:
+# feat(sql): implement subscription filter validation trigger
+# docs(auth): document password reset hygiene for supabase roles
+# fix(storage): set gen_random_uuid() default for object IDs
+# chore(connection): update session pooler notes for IPv4 fallback
+# docs(onboarding): scaffold README with validation steps and folder map
+
+# Notes:
+# - Keep summary ≤ 72 characters
+# - Use imperative mood (e.g. “add”, “fix”, “document”)
+# - Tag onboarding commits with `onboarding:xpert-forex-trade` if relevant

@@ -1,21 +1,29 @@
-# Security Policy
+# 🔐 Security Policy
 
-## Supported Versions
+## 📌 Domain Protection
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+This repository is maintained by **XpertForexTrade Inc.** and is the only official GitHub source for the trading platform hosted at [xpertforextrad.com](https://xpertforextrad.com). Any other domains, social handles, or repositories claiming affiliation should be treated with caution. If you suspect a clone or impersonation, please report it to [support@xpertforextrad.com](mailto:support@xpertforextrad.com).
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+## 🚨 Reporting Vulnerabilities
 
-## Reporting a Vulnerability
+If you discover a security vulnerability in this repo, please report it responsibly via [security@xpertforextrad.com](mailto:security@xpertforextrad.com). Do not open public issues for sensitive disclosures.
 
-Use this section to tell people how to report a vulnerability.
+## 🔒 Best Practices
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+- Never commit `.env` files or credentials. `.env` is already listed in `.gitignore`.
+- Always validate user input before processing trades or login attempts.
+- Use HTTPS for all production deployments.
+- Rotate database and API keys regularly.
+- Monitor for suspicious activity in the `users` and `trades` tables.
+
+## 🧪 CI/CD & Deployment Notes
+
+This repo includes modular workflows for deployment via GitHub Actions. Contributors should validate all secrets and environment variables before pushing to production. Refer to `ONBOARDING.md` for setup and deployment steps.
+
+## ⚠️ Disclaimer
+
+This software is provided “as is” without warranty of any kind. Use at your own risk. XpertForexTrade Inc. is not liable for financial losses, misconfigurations, or unauthorized deployments.
+
+---
+
+Stay secure. Stay transparent. Build with confidence.
