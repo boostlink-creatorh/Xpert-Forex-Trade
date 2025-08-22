@@ -1,0 +1,18 @@
+## Cloudflare Endpoint Schema Upload
+
+**Location**: `intlhub.org → Security → Web Assets → Endpoint Management → Upload Schema`
+
+**Accepted Formats**: `.yml`, `.yaml`, `.json`
+
+**Schema Requirements**:
+- OpenAPI or Swagger spec
+- Define paths, methods, parameters, responses
+
+**Security Behavior**:
+- Matches traffic to schema
+- Blocks or logs non-compliant requests
+
+**Recommended**:
+- Include contributor metadata in schema comments
+- Version your schema for audit clarity
+- Validate with PITR enabled for rollback protection
