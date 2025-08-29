@@ -25,3 +25,8 @@ service_account: "github-action-xpert-forex-trad@xpert-forex-trade.iam.gservicea
     - name: Verify identity
       run: |
         gcloud auth list
+
+            - name: Deploy to Hostinger
+      uses: annshiv/Hostinger-deployment@v2.1
+
+      

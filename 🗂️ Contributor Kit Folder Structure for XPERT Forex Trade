@@ -1,0 +1,16 @@
+/onboarding/
+├── metadata/
+│   ├── site_metadata.json             # Stores validated meta_key entries
+│   ├── validate_metadata.ps1          # PowerShell validator script
+│   ├── metadata-checklist.md          # Contributor checklist for metadata hygiene
+│   └── commit-template.txt            # Standardized commit message for metadata updates
+│
+├── logs/
+│   ├── fallback-log.txt               # Runtime log file for silent periods
+│   ├── fallback-logger.ps1            # PowerShell logger for fallback events
+│   ├── slack-alert.js                 # Node.js script for Slack alert integration
+│   ├── supabase-log.js                # Optional: Supabase log bridge
+│   ├── .env.example                   # Webhook setup template
+│   └── README.md                      # Setup instructions and contributor notes
+│
+└── README.md                          # Top-level onboarding guide
