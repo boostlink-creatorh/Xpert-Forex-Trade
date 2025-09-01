@@ -1,0 +1,6 @@
+## Trigger: log_action_insert
+Logs every scheduled action into `wp_action_audit_log` for audit tracking.  
+- Table: `wp_actionscheduler_actions`  
+- Timing: BEFORE INSERT  
+- Fields logged: `action_id`, `hook`, `status`, `logged_at`  
+- Created: 2025-08-22  
