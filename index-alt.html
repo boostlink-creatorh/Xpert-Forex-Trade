@@ -21,7 +21,10 @@
   </div>
 
   <footer class="bg-light text-center mt-5 p-3">
-    <small>&copy; <?= date('Y'); ?> Xpert-Forex-Tradex. All rights reserved.</small>
+    <small>&copy; <span id="current-year"></span> Xpert-Forex-Tradex. All rights reserved.</small>
   </footer>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
