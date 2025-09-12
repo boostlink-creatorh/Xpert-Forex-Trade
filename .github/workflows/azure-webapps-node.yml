@@ -21,11 +21,11 @@ jobs:
       - name: 🔐 Authenticate to Google Cloud
         uses: google-github-actions/auth@v1
         with:
-          workload_identity_provider: "projects/491439791457/locations/global/workloadIdentityPools/github-pool/providers/github-provider"
-          service_account: "firebase-deploy-bot@xpert-forex-trade.iam.gserviceaccount.com"
+          workload_identity_provider: "${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}"
+          service_account: "${{ secrets.GCP_SERVICE_ACCOUNT }}"
 
       - name: 🛠️ Install Firebase CLI
         run: npm install -g firebase-tools
 
       - name: 🚀 Deploy to Firebase Hosting
-        run: firebase deploy --only hosting --project xpert-forex-trade
+        run: firebase deploy --only hosting --project ${{ secrets.GCP_PROJECT_ID }}
