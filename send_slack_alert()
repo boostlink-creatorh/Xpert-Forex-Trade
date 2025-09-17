@@ -1,0 +1,25 @@
+from datetime import datetime
+
+def send_slack_alert(message, token=None):
+    webhook_url = os.getenv("SLACK_WEBHOOK_URL")
+    if not webhook_url:
+        return
+
+    ip = request.remote_addr or "Unknown IP"
+    timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    token_preview = token[:6] + "..." if token else "No token"
+
+    payload = {
+        "text": (
+            f"🚨 *Auth Failure Alert*\n"
+            f"> 🕒 Time: {timestamp}\n"
+            f"> 🌐 IP: {ip}\n"
+            f"> 🔑 Token: `{token_preview}`\n"
+            f"> 📣 Message: {message}"
+        )
+    }
+
+    try:
+        requests.post(webhook_url, json=payload)
+    except Exception as e:
+        print(f"⚠️ Slack alert failed: {e}")
