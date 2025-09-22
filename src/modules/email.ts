@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 /**
- * Send an email using SMTP.
+ * Send an email using Hostinger SMTP.
  * @param {Object} params
  * @param {string} params.to - Recipient email address
  * @param {string} params.subject - Email subject
@@ -10,20 +10,20 @@ import nodemailer from 'nodemailer';
  * @returns {Promise<Object>} - Nodemailer response info
  */
 export async function sendEmail({ to, subject, text, html }) {
-  // Configure SMTP transport
+  // Hostinger SMTP settings (sending, not POP for receiving)
   const transporter = nodemailer.createTransport({
-    host: 'smtp.yourhost.com', // e.g., smtp.gmail.com or Hostinger SMTP host
-    port: 587,
-    secure: false,
+    host: 'smtp.hostinger.com', // Hostinger SMTP outgoing server
+    port: 465,                  // SSL port for SMTP
+    secure: true,               // true for port 465 (SSL)
     auth: {
-      user: 'your@email.com', // Replace with your SMTP username
-      pass: 'your_password',  // Replace with your SMTP password
+      user: 'info@xpertforextrad.com',    // Hostinger email address
+      pass: 'Kapacity$55',                // Hostinger email password
     },
   });
 
   // Send email
   const info = await transporter.sendMail({
-    from: '"XPERT Forex Trade" <your@email.com>',
+    from: '"XPERT Forex Trade" <info@xpertforextrad.com>',
     to,
     subject,
     text,
