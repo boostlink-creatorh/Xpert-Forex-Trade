@@ -3,28 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xpert-Forex-Tradex</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>XPERT Forex Trade – Account & Support</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    header, footer { background: #002b45; color: white; padding: 1.5rem; text-align: center; }
+    main { max-width: 960px; margin: auto; padding: 2rem; }
+    h1, h2 { color: #002b45; }
+    .section { margin-bottom: 2rem; }
+    .card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .card h3 { margin-top: 0; }
+    .card p { margin-bottom: 0.5rem; }
+    .link { color: #0077cc; text-decoration: none; font-weight: bold; }
+    .audit-note { font-size: 0.8rem; color: #666; margin-top: 2rem; text-align: center; }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Xpert-Forex-Tradex</a>
+
+  <header>
+    <h1>XPERT Forex Trade</h1>
+    <p>Secure Brokerage Portal · Account Access & Support</p>
+  </header>
+
+  <main>
+    <div class="section">
+      <h2>Manage Your Account</h2>
+      <div class="card">
+        <h3>🔐 Login Help</h3>
+        <p>Reset your password, recover your username, or troubleshoot access issues.</p>
+        <a href="login-help.html" class="link">Go to Login Help</a>
+      </div>
     </div>
-  </nav>
 
-  <div class="container mt-5 text-center">
-    <h1>Welcome to Xpert-Forex-Tradex</h1>
-    <p class="lead">Your gateway to smarter trading insights and transparent onboarding.</p>
-    <a href="login.php" class="btn btn-primary">Login</a>
-    <a href="register.php" class="btn btn-outline-primary">Register</a>
-  </div>
+    <div class="section">
+      <h2>Verify & Fund</h2>
+      <div class="card">
+        <h3>🧾 KYC Verification</h3>
+        <p>Complete your identity check to unlock full trading access.</p>
+  <a href="/kyc" class="link">Start Verification</a>
+      </div>
 
-  <footer class="bg-light text-center mt-5 p-3">
-    <small>&copy; <span id="year"></span> Xpert-Forex-Tradex. All rights reserved.</small>
+      <div class="card">
+        <h3>💳 Deposit & Withdraw</h3>
+        <p>Securely manage your wallet with full audit logging.</p>
+  <a href="/wallet" class="link">Manage Wallet</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Support & Compliance</h2>
+      <div class="card">
+        <h3>📞 Contact Support</h3>
+        <p>Reach out for help with trades, deposits, or account issues.</p>
+        <a href="support.html" class="link">Contact Us</a>
+      </div>
+
+      <div class="card">
+        <h3>📚 Audit & Documentation</h3>
+        <p>View your transaction history and compliance records.</p>
+  <a href="/audit" class="link">View Audit Logs</a>
+      </div>
+    </div>
+
+    <p class="audit-note">📍 Hosted at 495 Clermont Ave, Brooklyn, NY · All actions logged for compliance</p>
+  </main>
+
+  <footer>
+    &copy; 2025 XPERT GLOBAL SYSTEMS™ · Brokerage · Media · Automation · Trust
   </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

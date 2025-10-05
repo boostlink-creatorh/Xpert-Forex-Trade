@@ -1,0 +1,39 @@
+name: Metadata Validation & Slack Alerts
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-metadata:
+    name: Validate Metadata
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run PowerShell metadata validator
+        shell: pwsh
+        run: |
+          try {
+            ./onboarding/metadata/validate_metadata.ps1
+          } catch {
+            Write-Error "❌ Metadata validation failed"
+            exit 1
+          }
+
+      - name: Send Slack alert on failure
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
+          SLACK_MESSAGE: |
+            🚨 *Metadata Validation Failed*  
+            Repo: XPERT Forex Trade  
+            Branch: `${{ github.ref_name }}`  
+            Commit: `${{ github.sha }}`  
+            Author: `${{ github.actor }}`  
+            Please review `validate_metadata.ps1` output and fallback logs.
+          SLACK_COLOR: danger

@@ -1,0 +1,5 @@
+Xpert-Forex-Trade/
+├── diagnostics/
+│   ├── API-integration.md  ← ✅ Add here
+│   ├── slack_alerts.md
+│   └── ...
