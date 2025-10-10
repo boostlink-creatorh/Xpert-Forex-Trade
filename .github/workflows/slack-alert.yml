@@ -1,0 +1,25 @@
+name: Notify Slack on Contributor Page Update
+
+on:
+  push:
+    paths:
+      - 'public_html/privacy.html'
+      - 'public_html/terms.html'
+      - 'public_html/contact.html'
+
+jobs:
+  slack-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: "XpertBot"
+          SLACK_ICON_EMOJI: ":xpert:"
+          SLACK_MESSAGE: |
+            🔔 *Contributor Page Updated*
+            • Repo: ${{ github.repository }}
+            • Commit: ${{ github.event.head_commit.message }}
+            • Author: ${{ github.event.head_commit.author.name }}
+            • Files: privacy.html / terms.html / contact.html
