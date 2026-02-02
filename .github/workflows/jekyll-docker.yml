@@ -1,10 +1,40 @@
-- name: Upload a Build Artifact
-  uses: actions/upload-artifact@v4.6.2
-  with:
-    name: site-artifact                # Branded artifact name (edit as needed)
-    path: _site                        # Path to Jekyll build output (commonly '_site')
-    if-no-files-found: warn            # Warn if nothing to upload
-    retention-days: 14                 # Default retention, update as needed
-    compression-level: 6               # Default compression
-    overwrite: true                    # Always upload latest build
-    include-hidden-files: false        # Don't include hidden files
+name: Jekyll Docker Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Set up Ruby (for Jekyll)
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2 # Adjust as needed
+
+      # 3. Build the Jekyll site
+      - name: Build Jekyll site
+        run: |
+          bundle install
+          bundle exec jekyll build
+
+      # 4. Upload the build artifact (your step)
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: site-artifact
+          path: _site
+          if-no-files-found: warn
+          retention-days: 14
+          compression-level: 6
+          overwrite: true
+          include-hidden-files: false
