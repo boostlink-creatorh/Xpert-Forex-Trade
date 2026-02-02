@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service – Xpert Forex Trade Inc</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Xpert Forex Trade Inc – Terms of Service</h1>
+    <p>Effective Date: October 9, 2025</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using our services, you agree to be bound by these Terms of Service.</p>
+    </section>
+
+    <section>
+      <h2>2. Contributor Responsibilities</h2>
+      <p>Contributors must maintain audit-friendly documentation and comply with onboarding protocols.</p>
+    </section>
+
+    <section>
+      <h2>3. Data Usage & Privacy</h2>
+      <p>We respect your privacy. Refer to our <a href="privacy.html">Privacy Policy</a> for details.</p>
+    </section>
+
+    <section>
+      <h2>4. Modifications</h2>
+      <p>We reserve the right to update these terms. Changes will be communicated via Slack and posted here.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Xpert Forex Trade Inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>
