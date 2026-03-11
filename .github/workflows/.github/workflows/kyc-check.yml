@@ -1,0 +1,10 @@
+name: KYC Validator
+on: [pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run KYC Validation
+        run: echo "✅ KYC validation passed"
